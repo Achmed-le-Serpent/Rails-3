@@ -1,0 +1,14 @@
+<h1>Events#index</h1>
+<p>Find me in app/views/events/index.html.erb</p>
+
+<% @event.each do |event| %>
+
+	<p><%= event.description %></p>
+
+	<p><%= event.date %></p>
+
+	<p><%= event.place %></p>
+
+	<a href="<%= event_path(event.id) %>" >Lire l'event</a>
+
+<% end %>

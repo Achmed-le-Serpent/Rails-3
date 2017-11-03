@@ -1,0 +1,40 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<h1>Ton profil !</h1>
+
+<p>Ton name : <%= @user.name %></p>
+
+<a href="<%= new_event_path %>" >New event</a>
+
+<a href="<%= users_path %>" >Index user</a>
+
+<%= link_to 'Clique pour supprimer ton profil', @moussaillon, method: :delete %>
+
+<h2>Tes Events !</h2>
+
+<% @created_events.each do |created_events| %>
+
+	<p><%= created_events.description %></p>
+
+	<p><%= created_events.date %></p>
+
+	<p><%= created_events.place %></p>
+
+	<a href="<%= event_path(event.id) %>" >Lire l'event</a>
+
+<% end %>
+
+<h2>Les Events auquel tu participe !</h2>
+
+<% @participated_events.each do |participated_events| %>
+
+	<p><%= participated_events.description %></p>
+
+	<p><%= participated_events.date %></p>
+
+	<p><%= participated_events.place %></p>
+
+	<a href="<%= event_path(event.id) %>" >Lire l'event</a>
+
+<% end %>
